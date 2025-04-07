@@ -1,0 +1,257 @@
+:root {
+    /* Base Theme - Teal */
+    --primary: #2a9d8f;
+    --secondary: #264653;
+    --accent: #e9c46a;
+    --text: #333333;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --header-gradient-start: #2a9d8f;
+    --header-gradient-end: #264653;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+    padding: 30px;
+}
+
+.profile-details h1 {
+    font-size: 2.4rem;
+    margin-bottom: 5px;
+}
+
+.profile-details h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: var(--accent);
+}
+
+/* Section Styles */
+.portfolio-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.content-box {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Experience Section */
+.experience-item, .education-item, .development-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-item:last-child, .education-item:last-child, .development-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.job-header h3 {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.workplace {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.duration {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.responsibilities li, .content-box ul li {
+    margin-bottom: 8px;
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+/* Education Section */
+.education-item h3 {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.institution {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* References Section */
+.reference {
+    margin-bottom: 15px;
+}
+
+.reference:last-child {
+    margin-bottom: 0;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.teal-theme {
+    background-color: #2a9d8f;
+}
+
+.purple-theme {
+    background-color: #8338ec;
+}
+
+.blue-theme {
+    background-color: #0077b6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-details h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-details h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Class for Purple Theme */
+body.purple-theme {
+    --primary: #8338ec;
+    --secondary: #3a0ca3;
+    --accent: #f72585;
+    --header-gradient-start: #8338ec;
+    --header-gradient-end: #3a0ca3;
+}
+
+/* Class for Blue Theme */
+body.blue-theme {
+    --primary: #0077b6;
+    --secondary: #023e8a;
+    --accent: #48cae4;
+    --header-gradient-start: #0077b6;
+    --header-gradient-end: #023e8a;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    header {
+        box-shadow: none;
+    }
+
+    .content-box {
+        box-shadow: none;
+    }
+
+    .theme-switcher {
+        display: none;
+    }
+}
